@@ -1,5 +1,6 @@
+'use client'
 import { useAtom } from 'jotai';
-import { todosAtom, Todo } from '../atom';
+import { todosAtom, Todo } from '../atoms';
 
 const ListPage = () => {
   const [todos] = useAtom(todosAtom);
