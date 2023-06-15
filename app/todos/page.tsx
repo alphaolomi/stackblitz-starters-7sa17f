@@ -1,15 +1,18 @@
-'use client'
-import { useAtom } from 'jotai';
-import { todosAtom, Todo } from '../atoms';
+"use client";
+import { useAtom } from "jotai";
+import Link from "next/link";
+import { todoListAtom } from "../atoms";
 
 const ListPage = () => {
-  const [todos] = useAtom(todosAtom);
+  const [todoList] = useAtom(todoListAtom);
 
   return (
     <div>
       <h1>Todo List</h1>
+      <Link href="/">Home</Link>
+      <br />
       <ul>
-        {todos.map((todo) => (
+        {todoList.map((todo) => (
           <li key={todo.id}>{todo.text}</li>
         ))}
       </ul>

@@ -6,4 +6,8 @@ export interface Todo {
   completed: boolean;
 }
 
-export const todosAtom = atomWithStorage<Todo[]>('todos', []);
+export const todoListAtom = atomWithStorage<Todo[]>('todoList', []);
+
+if (process.env.NODE_ENV !== 'production') {
+  todoListAtom.debugLabel = 'todoList';
+}
